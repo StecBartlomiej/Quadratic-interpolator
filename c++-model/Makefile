@@ -1,6 +1,6 @@
 # Makefile
 
-SHELL        := /bin/tcsh
+SHELL        := /bin/bash
 ROOT_DIR     := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 TOP_DIR     = ${ROOT_DIR}/..

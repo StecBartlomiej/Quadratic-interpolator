@@ -1,2 +1,6 @@
 libs/ac_types/
+
 *.o
+
+# ignore clang build commands
+**/compile_commands.json
