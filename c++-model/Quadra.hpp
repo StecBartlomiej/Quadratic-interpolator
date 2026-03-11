@@ -60,26 +60,35 @@ const int X2_W = X2_I + X2_F; // bit width
 typedef ac_int  <X2_W,       false>               x2_int_t;
 typedef ac_fixed<X2_W, X2_J, false, trn, AC_WRAP> x2_fxd_t; // u0.17
 
+
+
 // Coefficients:
+
+/// Allows for overwriting values with user define macro
+/// used as a way to change fxp lengths values without changing source code
+#ifndef DBG_OPT
+// Values optimized by genetic algorithm in Matlab
+const int A_I = 1;  // <optimize>
+const int A_F = 22; // <optimize>
+const int B_I = 4;  // <optimize>
+const int B_F = 16; // <optimize>
+const int C_I = 3;  // <optimize>
+const int C_F = 12; // <optimize>
+#endif //DBG_OPT
+	   
 // a:
-const int A_I =  4;  // <optimize>
-const int A_F = 28;  // <optimize>
 const int A_W = A_I + A_F;
 
 typedef ac_int  < A_W,       true>               a_int_t;
 typedef ac_fixed< A_W,  A_I, true, rdz, AC_WRAP> a_fxd_t;
 
 // b:
-const int B_I =  4;  // <optimize>
-const int B_F = 28;  // <optimize>
 const int B_W = B_I + B_F;
 
 typedef ac_int  < B_W,       true>               b_int_t;
 typedef ac_fixed< B_W,  B_I, true, rdz, AC_WRAP> b_fxd_t;
 
 // c:
-const int C_I =  4;  // <optimize>
-const int C_F = 28;  // <optimize>
 const int C_W = C_I + C_F;
 
 typedef ac_int  < C_W,       true>               c_int_t;

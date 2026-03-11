@@ -1,6 +1,8 @@
+.nvim/
 libs/ac_types/
 
 *.o
+*.asv
 
 # ignore clang build commands
 **/compile_commands.json
