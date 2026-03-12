@@ -1,10 +1,10 @@
-#! /bin/csh -f
+#!/usr/bin/env bash
 
-set binary = "./obj_dir/Vquadra_top"
+binary="./obj_dir/Vquadra_top"
 
-if (! -f ${binary}) then
+if [[ ! -f ${binary} ]] then
     echo "Could not find executable file ${binary} -- exiting!"
-endif    
+fi    
 
 echo "--------------------------------------------------------------------------------"
 echo "Running ${binary} ..."

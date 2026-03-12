@@ -1,4 +1,4 @@
-#! /bin/csh -f
+#!/usr/bin/env bash
 
 rm -rf obj_dir
 rm -f  dump.vcd

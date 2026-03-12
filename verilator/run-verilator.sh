@@ -1,17 +1,17 @@
-#! /bin/csh -f
+#!/usr/bin/env bash
 
 rm -rf run-verilator.log
 
-set TOP_DIR = ${HOME}/prj/coding-exercise2s
-set ACT_DIR = ${TOP_DIR}/libs/ac_types/include
-set CPP_DIR = ${TOP_DIR}/c++-model
-set RTL_DIR = ${TOP_DIR}/rtl-model
+TOP_DIR="${HOME}/new_intel/"
+ACT_DIR="${TOP_DIR}/libs/ac_types/include"
+CPP_DIR="${TOP_DIR}/c++-model"
+RTL_DIR="${TOP_DIR}/rtl-model"
 
 echo "--------------------------------------------------------------------------------"
 echo "Compiling with 'verilator' ..."
 echo "--------------------------------------------------------------------------------"
 
-set top_module = "quadra_top"
+top_module="quadra_top"
 
 verilator \
     --cc \
@@ -21,27 +21,18 @@ verilator \
     --exe \
     --build \
     --timing \
-#   uncomment next line to enable VCD tracing: \
     --trace \
     -j 0 \
     -Wall \
-#   -Wno-VARHIDDEN \
     -Wno-UNUSEDSIGNAL \
-#   -Wno-UNDRIVEN \
-#   -Wno-PINCONNECTEMPTY \
-#   -Wno-GENUNNAMED \
-#   -Wno-UNUSEDGENVAR \
     -Wno-UNUSEDPARAM \
     -Wno-WIDTHTRUNC \
     -Wno-WIDTHEXPAND \
-#   -Wno-COMBDLY \
-#   -Wno-REALCVT \
     \
     --error-limit 20 \
     --timescale 1ps/1ps \
     --timescale-override 1ps/1ps \
     --top-module ${top_module} \
-    --clk screuclk \
     \
     +define+NOFLOPDELAY=1 \
     \

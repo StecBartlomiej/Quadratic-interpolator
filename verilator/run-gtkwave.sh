@@ -1,11 +1,11 @@
-#! /bin/csh -f
+#!/usr/bin/env bash
 
-set  vcd_file = "dump.vcd"
-set gtkw_file = "waves.gtkw"
+vcd_file="dump.vcd"
+gtkw_file="waves.gtkw"
 
-if (!(-f ${vcd_file})) then
+if [ ! [ -f ${vcd_file} ] ]; then
    echo "Could not find VCD file ${vcd_file} -- exiting!"
    exit -1;
-endif
+fi
 
 gtkwave --save=${gtkw_file} ${vcd_file} &
