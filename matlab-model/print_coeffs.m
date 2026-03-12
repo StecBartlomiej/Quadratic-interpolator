@@ -28,7 +28,7 @@ C_W = C_I + C_F; # (s4.28)
 
 a_q = round(a * (2^A_F));
 b_q = round(b * (2^B_F));
-c_q = round(b * (2^C_F));
+c_q = round(c * (2^C_F));
 
 A = zeros(K,1);
 B = zeros(K,1);
